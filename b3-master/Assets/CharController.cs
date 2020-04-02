@@ -14,11 +14,19 @@ public class CharController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)){
-            aperson.SetFloat("Horizontal",-1);
-        }
-        else{
-            aperson.SetFloat("Horizontal",1);
+        var x_vel = Input.GetAxis("Horizontal");
+        var y_vel = Input.GetAxis("Vertical");
+        var jump = Input.GetAxis("Jump");
+
+        aperson.SetFloat("x_vel", x_vel);
+        aperson.SetFloat("y_vel", y_vel);
+
+        if (jump > 0)
+        {
+            aperson.SetFloat("jump", 1);
+        } else
+        {
+            aperson.SetFloat("jump", 0);
         }
     }
 }
