@@ -16,9 +16,11 @@ public class CharController : MonoBehaviour
     {
         var x_vel = Input.GetAxis("Horizontal");
         var y_vel = Input.GetAxis("Vertical");
-
+        var jump = Input.GetAxis("Jump");
+        
         aperson.SetFloat("x_vel", x_vel);
         aperson.SetFloat("y_vel", y_vel);
+        aperson.SetFloat("jump", jump);
 
     }
 }
