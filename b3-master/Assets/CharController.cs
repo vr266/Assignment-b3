@@ -5,10 +5,13 @@ using UnityEngine;
 public class CharController : MonoBehaviour
 {
     public Animator aperson;
+    //bool jumping = false;
+
 
     // Start is called before the first frame update
     void Start(){
-        aperson=GetComponent<Animator>();
+        aperson = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -23,10 +26,13 @@ public class CharController : MonoBehaviour
 
         if (jump > 0)
         {
-            aperson.SetFloat("jump", 1);
+            aperson.SetBool("grounded", false);
         } else
         {
-            aperson.SetFloat("jump", 0);
+            aperson.SetBool("grounded", true);
         }
+
+
+
     }
 }
